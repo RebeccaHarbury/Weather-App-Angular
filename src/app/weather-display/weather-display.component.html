@@ -1,0 +1,6 @@
+<div>
+  <p>{{date | date:'EEE'}}</p>
+  <p [ngClass]="{'big': bigIcon}"><img [src]="icon" class="weatherIcon" ></p>
+  <p><img src="images/up-arrow.png"/><span>{{highTemperature}}&deg;C</span></p>
+  <p><img src="images/down-arrow.png"/><span>{{lowTemperature}}&deg;C</span></p>
+</div>

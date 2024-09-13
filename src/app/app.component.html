@@ -1,0 +1,15 @@
+<input type="text" [(ngModel)]="searchTerm">
+<button (click)="getLocation()">search</button>
+
+<div>
+<weather-display-component [bigIcon]="true" date="2024-09-13T10:00Z" icon="images/weather-3.png"
+                           temperature="20" highTemperature="13"
+                           lowTemperature="2"></weather-display-component>
+</div>
+<div id="forecast">
+  <ng-container *ngFor="let day of dailyData">
+    <weather-display-component [date]="day.time" icon="images/weather-{{day.daySignificantWeatherCode}}.png"
+                               temperature="20" [highTemperature]="day.dayMaxScreenTemperature"
+                               [lowTemperature]="day.nightMinScreenTemperature"></weather-display-component>
+  </ng-container>
+</div>
