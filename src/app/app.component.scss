@@ -1,5 +1,43 @@
+#searchBar{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  input {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+  #searchButton{
+  border: 0;
+  outline: 0;
+  background: #ebfffc;
+  border-radius: 50%;
+  min-width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+}
+#placeName {
+  font-size:300%;
+}
 #forecast {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto auto;
-  margin-top: 20px;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  background: linear-gradient(135deg, #aeaeeb, #e7b0ce, #ebbb95);
+  border-radius: 30px;
+  padding: 20px;
+  justify-items: center;
 }
