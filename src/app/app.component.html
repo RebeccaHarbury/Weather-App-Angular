@@ -1,15 +1,23 @@
-<input type="text" [(ngModel)]="searchTerm">
-<button (click)="getLocation()">search</button>
+<div id="searchBar">
+<input type="text" placeholder="enter city name" (keyup.enter)="getLocation(); clearSearchInput()" [(ngModel)]="searchTerm"> <button id="searchButton"  (click)="getLocation(); clearSearchInput()"><img src="images/search-icon.png"></button>
+</div>
+
+<div id="placeName">
+  {{place_name}}
+</div>
 
 <div>
-<weather-display-component [bigIcon]="true" date="2024-09-13T10:00Z" icon="images/weather-3.png"
-                           temperature="20" highTemperature="13"
-                           lowTemperature="2"></weather-display-component>
+  <weather-display-component [bigIcon]="true" [date]="dailyData[0].time" icon="images/weather-{{hourlyData.significantWeatherCode}}.png" alt="weather icon"
+                             [currentTemp]="true" [currentTemperature]= "hourlyData.screenTemperature" 
+                             [currentTemp]="true" up="images/up-arrow.png" alt="up arrow" [highTemperature]="dailyData[0].dayMaxScreenTemperature"
+                             [currentTemp]="true" down="images/down-arrow.png" alt="down arrow" [lowTemperature]="dailyData[0].nightMinScreenTemperature"></weather-display-component>
 </div>
+
+
 <div id="forecast">
   <ng-container *ngFor="let day of dailyData">
     <weather-display-component [date]="day.time" icon="images/weather-{{day.daySignificantWeatherCode}}.png"
-                               temperature="20" [highTemperature]="day.dayMaxScreenTemperature"
-                               [lowTemperature]="day.nightMinScreenTemperature"></weather-display-component>
+                               up="images/up-arrow.png" alt="up arrow" [highTemperature]="day.dayMaxScreenTemperature"
+                               down="images/down-arrow.png" alt="down arrow" [lowTemperature]="day.nightMinScreenTemperature"></weather-display-component>
   </ng-container>
 </div>

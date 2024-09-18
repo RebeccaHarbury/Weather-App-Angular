@@ -16,8 +16,11 @@ export class WeatherDisplayComponent {
   }
   @Input() date = '';
   @Input() icon = '';
+  @Input() up = '';
+  @Input() down = '';
   @Input() bigIcon = false;
-  @Input() temperature = '';
+  @Input() currentTemperature = '';
+  @Input() currentTemp = false;
   @Input() highTemperature = '';
   @Input() lowTemperature = '';
 
