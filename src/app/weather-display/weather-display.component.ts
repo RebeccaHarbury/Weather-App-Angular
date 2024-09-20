@@ -14,10 +14,14 @@ import { CommonModule, DatePipe } from '@angular/common';
 export class WeatherDisplayComponent {
   constructor() {
   }
+  @Input() place = '';
   @Input() date = '';
   @Input() icon = '';
-  @Input() bigIcon = false;
-  @Input() temperature = '';
+  @Input() up = '';
+  @Input() down = '';
+  @Input() bigIcon = true;
+  @Input() currentTemperature = '';
+  @Input() currentTemp = true;
   @Input() highTemperature = '';
   @Input() lowTemperature = '';
 
