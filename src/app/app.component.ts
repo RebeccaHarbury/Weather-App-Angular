@@ -87,6 +87,7 @@ export class AppComponent implements OnInit{
 
     }
     console.log(this.location_data);
+//this is a comment for testing commit
 
 /*
     clearSearchInput () {
